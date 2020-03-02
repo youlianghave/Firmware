@@ -46,7 +46,12 @@
 #include <uORB/topics/manual_control_setpoint.h>
 #include <uORB/topics/vehicle_status.h>
 #include <lib/ecl/geo/geo.h>
+
+#ifdef CONSTRAINED_FLASH
+#include <ObstacleAvoidance_dummy.hpp>
+#else
 #include <ObstacleAvoidance.hpp>
+#endif
 
 /**
  * This enum has to agree with position_setpoint_s type definition
