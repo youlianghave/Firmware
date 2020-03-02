@@ -56,7 +56,7 @@ public:
 	void injectAvoidanceSetpoints(matrix::Vector3f &pos_sp, matrix::Vector3f &vel_sp, float &yaw_sp,
 				      float &yaw_speed_sp)
 	{
-		warn_dummy();
+		notify_dummy();
 	};
 
 	void updateAvoidanceDesiredWaypoints(const matrix::Vector3f &curr_wp, const float curr_yaw,
@@ -64,26 +64,26 @@ public:
 					     const matrix::Vector3f &next_wp, const float next_yaw, const float next_yawspeed, const bool ext_yaw_active,
 					     const int wp_type)
 	{
-		warn_dummy();
+		notify_dummy();
 	};
 
 	void updateAvoidanceDesiredSetpoints(const matrix::Vector3f &pos_sp, const matrix::Vector3f &vel_sp,
 					     const int type)
 	{
-		warn_dummy();
+		notify_dummy();
 	}
 
 
 	void checkAvoidanceProgress(const matrix::Vector3f &pos, const matrix::Vector3f &prev_wp,
 				    float target_acceptance_radius, const matrix::Vector2f &closest_pt)
 	{
-		warn_dummy();
+		notify_dummy();
 	};
 
 protected:
 
-	void warn_dummy()
+	void notify_dummy()
 	{
-		PX4_WARN("Dummy avoidance module called!");
+		PX4_PANIC("Dummy avoidance module called!");
 	}
 };

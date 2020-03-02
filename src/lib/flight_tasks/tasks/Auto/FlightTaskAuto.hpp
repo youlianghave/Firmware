@@ -47,10 +47,11 @@
 #include <uORB/topics/vehicle_status.h>
 #include <lib/ecl/geo/geo.h>
 
-#ifdef CONSTRAINED_FLASH
-#include <ObstacleAvoidance_dummy.hpp>
+// TODO: make this switchable in the board config, like a module
+#if CONSTRAINED_FLASH
+#include <lib/avoidance/ObstacleAvoidance_dummy.hpp>
 #else
-#include <ObstacleAvoidance.hpp>
+#include <lib/avoidance/ObstacleAvoidance.hpp>
 #endif
 
 /**
